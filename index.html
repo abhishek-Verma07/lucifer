@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Happy Birthday My Cutiee Chwenchyy ✉️</title>
+  <title>Happy Birthday My Cutiee Chwenchy ✉️</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     * {
@@ -50,24 +50,9 @@
     .bubble.medium { width: 50px; height: 50px; }
     .bubble.large { width: 80px; height: 80px; }
 
-    .bubble:nth-child(1) {
-      top: 80%;
-      left: 5%;
-      background: #ffeaa7;
-      animation-delay: 0s;
-    }
-    .bubble:nth-child(2) {
-      top: 90%;
-      left: 80%;
-      background: #fd79a8;
-      animation-delay: 3s;
-    }
-    .bubble:nth-child(3) {
-      top: 75%;
-      left: 50%;
-      background: #74b9ff;
-      animation-delay: 6s;
-    }
+    .bubble:nth-child(1) { top: 80%; left: 5%; background: #ffeaa7; animation-delay: 0s; }
+    .bubble:nth-child(2) { top: 90%; left: 80%; background: #fd79a8; animation-delay: 3s; }
+    .bubble:nth-child(3) { top: 75%; left: 50%; background: #74b9ff; animation-delay: 6s; }
 
     @keyframes float {
       0% { transform: translateY(0) translateX(0); }
@@ -107,7 +92,7 @@
       margin-bottom: 22px;
     }
 
-    /* Cake */
+    /* Minimal premium Cake */
 
     .cake-wrap {
       width: 220px;
@@ -116,122 +101,106 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
     }
 
     .cake-plate {
-      position: absolute;
-      bottom: 18px;
       width: 210px;
-      height: 28px;
-      background: #dfe6e9;
-      border-radius: 20px;
-      box-shadow: 0 8px 0 rgba(0, 0, 0, 0.18);
+      height: 26px;
+      background: rgba(243, 243, 243, 0.95);
+      border-radius: 999px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+      margin-top: 10px;
     }
 
     .cake {
-      position: absolute;
-      bottom: 40px;
-      width: 170px;
-      height: 110px;
-      margin: 0 auto;
-      background: #ffeaa7;
-      border-radius: 18px 18px 24px 24px;
-      box-shadow: 0 10px 0 rgba(0, 0, 0, 0.15);
+      width: 180px;
+      height: 100px;
+      background: linear-gradient(145deg, #fff3e0, #ffe0c2);
+      border-radius: 26px;
+      box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.35),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+      position: relative;
       overflow: hidden;
     }
 
-    .cake::before,
+    .cake::before {
+      content: "";
+      position: absolute;
+      inset: 10px 16px;
+      border-radius: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.8);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      background: linear-gradient(to right, rgba(255, 198, 160, 0.4), rgba(255, 255, 255, 0.2));
+      opacity: 0.8;
+    }
+
     .cake::after {
       content: "";
       position: absolute;
-      width: 100%;
-      height: 20px;
+      bottom: 0;
       left: 0;
-    }
-
-    .cake::before {
-      top: 18px;
-      background: repeating-linear-gradient(
-        90deg,
-        #ff7675 0,
-        #ff7675 15px,
-        #fab1a0 15px,
-        #fab1a0 30px
-      );
-    }
-
-    .cake::after {
-      top: 52px;
-      background: repeating-linear-gradient(
-        90deg,
-        #74b9ff 0,
-        #74b9ff 15px,
-        #a29bfe 15px,
-        #a29bfe 30px
-      );
-    }
-
-    .cake-top {
-      position: absolute;
-      top: -26px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 150px;
+      right: 0;
       height: 34px;
-      background: #ffeaa7;
-      border-radius: 40px 40px 20px 20px;
-      box-shadow: 0 6px 0 rgba(0, 0, 0, 0.12);
+      background: radial-gradient(circle at 50% 0, rgba(0,0,0,0.08), transparent 60%);
+      opacity: 0.35;
     }
-
-    .drip {
-      position: absolute;
-      width: 24px;
-      height: 30px;
-      background: #ff7675;
-      border-radius: 20px;
-      top: 6px;
-    }
-
-    .drip:nth-child(1) { left: 12px; }
-    .drip:nth-child(2) { left: 60px; }
-    .drip:nth-child(3) { left: 108px; }
-
-    /* Candles */
 
     .candles {
       position: absolute;
-      top: -46px;
+      top: -40px;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
-      gap: 10px;
+      gap: 12px;
     }
 
     .candle {
       width: 10px;
-      height: 35px;
-      background: repeating-linear-gradient(
-        135deg,
-        #ffeaa7 0,
-        #ffeaa7 5px,
-        #fab1a0 5px,
-        #fab1a0 10px
-      );
-      border-radius: 6px;
+      height: 32px;
+      background: linear-gradient(180deg, #ffffff, #ffe6cc);
+      border-radius: 999px;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
       position: relative;
+    }
+
+    .candle::after {
+      content: "";
+      position: absolute;
+      top: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 6px;
+      background: #444;
+      border-radius: 999px;
     }
 
     .flame {
       position: absolute;
-      top: -14px;
+      top: -18px;
       left: 50%;
       transform: translateX(-50%);
       width: 14px;
       height: 18px;
-      background: radial-gradient(circle at 50% 20%, #ffeaa7 0, #fdcb6e 40%, #e17055 70%);
-      border-radius: 50%;
+      background: radial-gradient(circle at 50% 20%, #ffeaa7 0, #fdcb6e 40%, #e17055 75%);
+      border-radius: 50% 50% 50% 50%;
       animation: flicker 0.8s infinite alternate;
-      box-shadow: 0 0 10px rgba(255, 234, 167, 0.8);
+      box-shadow: 0 0 14px rgba(255, 234, 167, 0.9);
+    }
+
+    .candles.blown .flame {
+      opacity: 0;
+      box-shadow: none;
+      animation: none;
+    }
+
+    .blow-hint {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      opacity: 0.9;
+      display: none;
     }
 
     @keyframes flicker {
@@ -313,25 +282,26 @@
     .envelope-body {
       position: relative;
       width: 100%;
-      padding-top: 130px; /* flap ke niche space */
-      background: #ffeaa7;
+      padding-top: 130px; /* flap ke neeche space */
+      background: linear-gradient(145deg, #fbe9d7, #fbded0);
       border-radius: 18px;
       box-shadow: 0 16px 30px rgba(0, 0, 0, 0.4);
-      overflow: visible;  /* ab text cut nahi hoga */
+      overflow: visible;
     }
 
     .envelope-front {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, #ffeaa7, #fab1a0);
       border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      background: linear-gradient(145deg, #fdf5ee, #f7ddc7);
       z-index: 1;
     }
 
     .envelope-flap {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, #ffdfef, #f8a5c2);
+      background: linear-gradient(145deg, #ffe6f2, #f6c9df);
       clip-path: polygon(0 0, 50% 60%, 100% 0);
       transform-origin: top;
       transform: rotateX(0deg);
@@ -344,8 +314,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -40%);
-      width: 50px;
-      height: 50px;
+      width: 46px;
+      height: 46px;
       background: #ffcc66;
       border-radius: 50%;
       display: flex;
@@ -355,6 +325,7 @@
       color: #333;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
       z-index: 4;
+      transition: opacity 0.4s ease, transform 0.4s ease;
     }
 
     .letter {
@@ -396,9 +367,14 @@
       transform: rotateX(-160deg);
     }
 
+    .envelope.open .envelope-seal {
+      opacity: 0;
+      transform: translate(-50%, -40%) scale(0.8);
+    }
+
     .envelope.open .letter {
       opacity: 1;
-      max-height: 500px; /* full text visible, koi cut nahi */
+      max-height: 500px; /* full text visible */
     }
 
     /* After letter section */
@@ -464,6 +440,23 @@
       font-weight: 600;
       font-size: 0.95rem;
       margin-bottom: 4px;
+    }
+
+    /* Enjoy message after cake cut */
+
+    .enjoy-message {
+      margin-top: 18px;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.6;
+      opacity: 0;
+      transform: translateY(14px) scale(0.97);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .enjoy-message.show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
     }
 
     /* Music button */
@@ -540,20 +533,18 @@
 
     <div class="hero-row">
       <!-- Cake -->
-      <div class="cake-wrap">
-        <div class="cake-plate"></div>
-        <div class="cake">
-          <div class="candles">
+      <div class="cake-wrap" id="cakeWrap">
+        <div class="cake" id="cake">
+          <div class="candles" id="candles">
             <div class="candle"><div class="flame"></div></div>
             <div class="candle"><div class="flame"></div></div>
             <div class="candle"><div class="flame"></div></div>
-          </div>
-          <div class="cake-top">
-            <div class="drip"></div>
-            <div class="drip"></div>
-            <div class="drip"></div>
           </div>
         </div>
+        <div class="cake-plate"></div>
+        <p class="blow-hint" id="blowHint">
+          Letter padhne ke baad, mic me halki si phoonk maar ke candles off kar de 🎤
+        </p>
       </div>
 
       <!-- Teddy -->
@@ -564,7 +555,6 @@
 
     <!-- Sticker image (uski photo) -->
     <div class="sticker-wrap">
-      <!-- yaha file ka naam change kar sakta hai -->
       <img src="chwenchy.png" alt="Chwenchy" class="sticker-img" />
     </div>
 
@@ -580,7 +570,7 @@
             <div class="envelope-flap"></div>
             <div class="envelope-seal">⭐</div>
 
-            <div class="letter">
+            <div class="letter" id="letter">
               <h2>Dear babuu, Chwenchy,</h2>
               <p>
                 Happy Birthday, to my cutest bestie💕! 💫 Aaj ka din sirf
@@ -610,7 +600,7 @@
       </div>
     </div>
 
-    <!-- After letter reveal -->
+    <!-- After letter reveal (promise list) -->
     <div class="after-letter" id="afterLetter">
       <p class="wish-line">✨ Aaj ke liye ek chhota sa promise list for you ✨</p>
       <p class="typewriter" id="typewriter"></p>
@@ -631,22 +621,39 @@
       </div>
     </div>
 
+    <!-- Enjoy message after cake cut -->
+    <div class="enjoy-message" id="enjoyMessage">
+      Enjoy your day to the fullest, Chwenchy! 💖<br />
+      Tu deserve karti hai saare smiles, saari good vibes aur bohot saari happiness aaj ke din. ✨
+    </div>
+
     <!-- Music -->
     <button class="music-btn" id="musicBtn">
       🎵 Play Birthday Song
     </button>
     <audio id="music" src="birthday.mp3"></audio>
+    <audio id="clapAudio" src="clap.mp3"></audio>
   </div>
 
   <script>
     const envelope = document.getElementById("envelope");
+    const letter = document.getElementById("letter");
     const afterLetter = document.getElementById("afterLetter");
     const typewriterEl = document.getElementById("typewriter");
     const musicBtn = document.getElementById("musicBtn");
     const music = document.getElementById("music");
     const cards = document.querySelectorAll(".mini-card");
+    const cakeWrap = document.getElementById("cakeWrap");
+    const cake = document.getElementById("cake");
+    const candles = document.getElementById("candles");
+    const blowHint = document.getElementById("blowHint");
+    const clapAudio = document.getElementById("clapAudio");
+    const enjoyMessage = document.getElementById("enjoyMessage");
 
     let letterOpened = false;
+    let promisesShown = false;
+    let candlesBlown = false;
+    let cakeCut = false;
 
     const twText =
       "Sweetie, is saal sirf ek hi target: more smiles, more memories,\n" +
@@ -690,20 +697,133 @@
       }
     }
 
+    // Promise list tabhi dikhe jab user thoda scroll kare
+    function checkScrollForPromises() {
+      if (!letterOpened || promisesShown) return;
+      const rect = letter.getBoundingClientRect();
+      if (rect.bottom < window.innerHeight - 40 || window.scrollY > 150) {
+        promisesShown = true;
+        afterLetter.classList.add("show");
+        startTypewriter(twText, typewriterEl);
+        launchConfetti();
+        revealCardsSequentially();
+      }
+    }
+
+    window.addEventListener("scroll", checkScrollForPromises);
+
+    // Envelope click
     envelope.addEventListener("click", () => {
       envelope.classList.add("open");
 
       if (!letterOpened) {
         letterOpened = true;
+        // letter open hone ke baad hi mic hint
         setTimeout(() => {
-          afterLetter.classList.add("show");
-          startTypewriter(twText, typewriterEl);
-          launchConfetti();
-          revealCardsSequentially();
+          blowHint.style.display = "block";
+          startMicForBlow();
         }, 700);
       }
     });
 
+    // Mic detection for blowing candles
+    function startMicForBlow() {
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        blowHint.textContent = "Mic support nahi mila, candles pe tap karke off kar de 🎂";
+        cakeWrap.addEventListener("click", blowOutCandlesOnce);
+        return;
+      }
+
+      navigator.mediaDevices
+        .getUserMedia({ audio: true })
+        .then((stream) => {
+          const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+          const source = audioCtx.createMediaStreamSource(stream);
+          const analyser = audioCtx.createAnalyser();
+          analyser.fftSize = 512;
+
+          source.connect(analyser);
+
+          const dataArray = new Uint8Array(analyser.frequencyBinCount);
+
+          function detectBlow() {
+            analyser.getByteFrequencyData(dataArray);
+            let sum = 0;
+            for (let i = 0; i < dataArray.length; i++) sum += dataArray[i];
+            const volume = sum / dataArray.length;
+
+            if (volume > 80 && !candlesBlown) {
+              blowOutCandlesOnce();
+            }
+            if (!candlesBlown) {
+              requestAnimationFrame(detectBlow);
+            }
+          }
+          detectBlow();
+        })
+        .catch(() => {
+          blowHint.textContent = "Mic permission nahi mila, candles pe tap karke off kar de 🎂";
+          cakeWrap.addEventListener("click", blowOutCandlesOnce);
+        });
+    }
+
+    function blowOutCandlesOnce() {
+      if (candlesBlown) return;
+      candlesBlown = true;
+      candles.classList.add("blown");
+      blowHint.textContent = "Nice! Ab finger se right swipe karke cake cut kar de 👉🍰";
+    }
+
+    // Swipe to cut cake
+    let touchStartX = null;
+
+    cakeWrap.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].clientX;
+    });
+
+    cakeWrap.addEventListener("touchend", (e) => {
+      if (!candlesBlown || cakeCut || touchStartX === null) return;
+      const endX = e.changedTouches[0].clientX;
+      const diffX = endX - touchStartX;
+      if (Math.abs(diffX) > 60) {
+        cutCake();
+      }
+      touchStartX = null;
+    });
+
+    // Desktop fallback: click after blown
+    cakeWrap.addEventListener("click", () => {
+      if (candlesBlown && !cakeCut) cutCake();
+    });
+
+    function cutCake() {
+      cakeCut = true;
+      cake.style.boxShadow =
+        "0 10px 24px rgba(0,0,0,0.45), inset 0 -2px 0 rgba(0,0,0,0.08)";
+      cake.style.position = "relative";
+      cake.style.overflow = "visible";
+
+      // simple cut line
+      const cutLine = document.createElement("div");
+      cutLine.style.position = "absolute";
+      cutLine.style.top = "0";
+      cutLine.style.bottom = "0";
+      cutLine.style.left = "50%";
+      cutLine.style.width = "2px";
+      cutLine.style.background = "rgba(0,0,0,0.12)";
+      cutLine.style.boxShadow = "0 0 6px rgba(0,0,0,0.2)";
+      cake.appendChild(cutLine);
+
+      // clap sound
+      if (clapAudio) {
+        clapAudio.currentTime = 0;
+        clapAudio.play().catch(() => {});
+      }
+
+      enjoyMessage.classList.add("show");
+    }
+
+    // Music
     musicBtn.addEventListener("click", () => {
       if (music.paused) {
         music
@@ -722,4 +842,3 @@
   </script>
 </body>
 </html>
-
