@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Happy Birthday My Sweetiee, Cutiee Chwenchy 💌</title>
+  <title>Happy Birthday My Cutiee Chwenchy ✉️</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     * {
@@ -13,8 +13,8 @@
 
     body {
       min-height: 100vh;
-      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
+      font-family: "Comic Sans MS", "Comic Sans", system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: radial-gradient(circle at top, #ffd1ff 0, #ff9a9e 35%, #2b5876 100%);
       display: flex;
       align-items: center;
@@ -123,7 +123,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 16px;
-      margin-bottom: 26px;
+      margin-bottom: 22px;
     }
 
     /* Cake */
@@ -132,18 +132,30 @@
       width: 220px;
       height: 220px;
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cake-plate {
+      position: absolute;
+      bottom: 18px;
+      width: 210px;
+      height: 28px;
+      background: #dfe6e9;
+      border-radius: 20px;
+      box-shadow: 0 8px 0 rgba(0, 0, 0, 0.18);
     }
 
     .cake {
       position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 180px;
-      height: 120px;
+      bottom: 40px;
+      width: 170px;
+      height: 110px;
+      margin: 0 auto;
       background: #ffeaa7;
-      border-radius: 16px 16px 30px 30px;
-      box-shadow: 0 10px 0 rgba(0, 0, 0, 0.1);
+      border-radius: 18px 18px 24px 24px;
+      box-shadow: 0 10px 0 rgba(0, 0, 0, 0.15);
       overflow: hidden;
     }
 
@@ -152,7 +164,7 @@
       content: "";
       position: absolute;
       width: 100%;
-      height: 18px;
+      height: 20px;
       left: 0;
     }
 
@@ -168,7 +180,7 @@
     }
 
     .cake::after {
-      top: 50px;
+      top: 52px;
       background: repeating-linear-gradient(
         90deg,
         #74b9ff 0,
@@ -178,27 +190,15 @@
       );
     }
 
-    .cake-plate {
-      position: absolute;
-      bottom: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 210px;
-      height: 28px;
-      background: #dfe6e9;
-      border-radius: 20px;
-      box-shadow: 0 8px 0 rgba(0, 0, 0, 0.18);
-    }
-
     .cake-top {
       position: absolute;
-      top: -24px;
+      top: -26px;
       left: 50%;
       transform: translateX(-50%);
       width: 150px;
-      height: 30px;
+      height: 34px;
       background: #ffeaa7;
-      border-radius: 40px 40px 15px 15px;
+      border-radius: 40px 40px 20px 20px;
       box-shadow: 0 6px 0 rgba(0, 0, 0, 0.12);
     }
 
@@ -208,26 +208,26 @@
       height: 30px;
       background: #ff7675;
       border-radius: 20px;
-      top: 0;
+      top: 6px;
     }
 
     .drip:nth-child(1) {
-      left: 10px;
+      left: 12px;
     }
 
     .drip:nth-child(2) {
-      left: 55px;
+      left: 60px;
     }
 
     .drip:nth-child(3) {
-      left: 100px;
+      left: 108px;
     }
 
     /* Candles */
 
     .candles {
       position: absolute;
-      top: -40px;
+      top: -46px;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
@@ -256,7 +256,7 @@
       width: 14px;
       height: 18px;
       background: radial-gradient(circle at 50% 20%, #ffeaa7 0, #fdcb6e 40%, #e17055 70%);
-      border-radius: 50% 50% 50% 50%;
+      border-radius: 50%;
       animation: flicker 0.8s infinite alternate;
       box-shadow: 0 0 10px rgba(255, 234, 167, 0.8);
     }
@@ -299,16 +299,27 @@
       }
     }
 
-    .teddy-tag {
-      margin-top: 6px;
-      font-size: 0.9rem;
-      opacity: 0.9;
+    /* Sticker image (chwenchy.png) */
+
+    .sticker-wrap {
+      margin: 4px auto 16px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .sticker-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      border: 3px solid rgba(255, 255, 255, 0.7);
     }
 
     /* Envelope section */
 
     .envelope-section {
-      margin: 14px auto 8px;
+      margin: 10px auto 8px;
     }
 
     .envelope-hint {
@@ -324,8 +335,9 @@
     }
 
     .envelope {
-      width: 260px;
-      height: 180px;
+      width: 92%;
+      max-width: 430px;
+      height: 250px;
       position: relative;
       cursor: pointer;
       transform-style: preserve-3d;
@@ -336,7 +348,7 @@
       position: absolute;
       inset: 0;
       background: #ffeaa7;
-      border-radius: 12px;
+      border-radius: 18px;
       box-shadow: 0 16px 30px rgba(0, 0, 0, 0.4);
       overflow: hidden;
     }
@@ -351,7 +363,7 @@
     .envelope-flap {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, #ff9ff3, #fd79a8);
+      background: linear-gradient(135deg, #ffdfef, #f8a5c2);
       clip-path: polygon(0 0, 50% 60%, 100% 0);
       transform-origin: top;
       transform: rotateX(0deg);
@@ -364,15 +376,15 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -40%);
-      width: 46px;
-      height: 46px;
-      background: #ff7675;
+      width: 50px;
+      height: 50px;
+      background: #ffcc66;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.3rem;
-      color: #fff;
+      color: #333;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
       z-index: 4;
     }
@@ -380,18 +392,18 @@
     .letter {
       position: absolute;
       left: 50%;
-      bottom: 10px;
+      bottom: 12px;
       transform: translateX(-50%);
-      width: 86%;
-      height: 86%;
+      width: 88%;
+      height: 80%;
       background: #fff;
-      border-radius: 16px;
-      padding: 16px 16px 18px;
+      border-radius: 18px;
+      padding: 18px 18px 22px;
       text-align: left;
       color: #2d3436;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
       transform-origin: bottom;
-      transform: translateY(100px);
+      transform: translateY(130px);
       opacity: 0;
       transition: transform 0.7s ease, opacity 0.7s ease;
       overflow-y: auto;
@@ -399,14 +411,14 @@
 
     .letter h2 {
       font-size: 1.15rem;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       color: #d63031;
     }
 
     .letter p {
-      font-size: 0.9rem;
-      line-height: 1.4;
-      margin-bottom: 6px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 8px;
     }
 
     .letter p.closing {
@@ -420,20 +432,20 @@
     }
 
     .envelope.open .letter {
-      transform: translateY(-8px);
+      transform: translateY(0);
       opacity: 1;
     }
 
     .tap-text {
       font-size: 0.85rem;
       opacity: 0.86;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
 
     /* After letter section */
 
     .after-letter {
-      margin-top: 16px;
+      margin-top: 20px;
       opacity: 0;
       transform: translateY(20px);
       max-height: 0;
@@ -444,7 +456,7 @@
     .after-letter.show {
       opacity: 1;
       transform: translateY(0);
-      max-height: 500px;
+      max-height: 600px;
     }
 
     .wish-line {
@@ -466,30 +478,39 @@
       flex-wrap: wrap;
       gap: 10px;
       justify-content: center;
+      margin-top: 4px;
     }
 
     .mini-card {
       flex: 1 1 150px;
-      max-width: 220px;
+      max-width: 260px;
       background: rgba(0, 0, 0, 0.35);
       border-radius: 16px;
       padding: 10px 12px 12px;
       text-align: left;
-      font-size: 0.85rem;
-      line-height: 1.35;
+      font-size: 0.9rem;
+      line-height: 1.45;
       border: 1px solid rgba(255, 255, 255, 0.12);
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .mini-card.show {
+      opacity: 1;
+      transform: translateX(0);
     }
 
     .mini-card-title {
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       margin-bottom: 4px;
     }
 
     /* Music button */
 
     .music-btn {
-      margin-top: 16px;
+      margin-top: 18px;
       padding: 9px 20px;
       border-radius: 999px;
       border: none;
@@ -564,7 +585,12 @@
       }
 
       .envelope {
-        transform: scale(0.9);
+        width: 100%;
+        height: 260px;
+      }
+
+      .letter {
+        font-size: 0.95rem;
       }
     }
   </style>
@@ -578,8 +604,8 @@
 
     <h1>Happy Birthday, <span>Chwenchy Babuu</span> 🎉</h1>
     <p class="subtitle">
-      from Lucifer 🫶
-      <span><!--Abhishek -->Your Crazy Friend 😜</span>
+      from Lucifer 😉
+      <span>Your Crazy Friend 😜</span>
     </p>
 
     <div class="hero-row">
@@ -612,9 +638,15 @@
       </div>
     </div>
 
+    <!-- Sticker image (uski photo) -->
+    <div class="sticker-wrap">
+      <!-- yaha file ka naam change kar sakta hai -->
+      <img src="chwenchy.png" alt="Chwenchy" class="sticker-img" />
+    </div>
+
     <!-- Envelope -->
     <div class="envelope-section">
-      <p class="envelope-hint">Ikk secret letter sirf tere liye, Chwenchy 💌</p>
+      <p class="envelope-hint">Ikk secret letter hai tere liye, Chwenchy ✉️</p>
       <p class="tap-text">Envelope pe click / tap kar ke open kar 👇</p>
 
       <div class="envelope-wrapper">
@@ -622,31 +654,31 @@
           <div class="envelope-body">
             <div class="envelope-front"></div>
             <div class="envelope-flap"></div>
-            <div class="envelope-seal">💖</div>
+            <div class="envelope-seal">⭐</div>
 
             <div class="letter">
               <h2>Dear babuu, Chwenchy,</h2>
               <p>
-                Happy Birthday, to my cutest bestie! 💫 Aaj ka din sirf
-                <strong>tera</strong> hai, isliye Am grateful ki tu meri life me hai.
+                Happy Birthday, to my cutest bestie💕! 💫 Aaj ka din sirf
+                <strong>tera</strong> hai, isliye Am grateful ki tu meri bestie hai.
               </p>
               <p>
-                Teri Bakchodi, teri bakbak, tera care, aur tera
-                “thoda sa attitude” – sab kuch perfect combo hai. 💅😌
+                Teri bakchodi, teri bakbak, tera care, aur tera
+                “thoda sa attitude” – sab kuch perfect combo hai. 😌
               </p>
               <p>
                 Main wish karta hu ki tera har dream reality ban jaye,
                 tujhe hamesha woh log mile jo tujhe genuinely value karein,
                 aur kabhi bhi tera smile fade na ho. Jo bhi tension ho,
-                Mujhe transfer kar diya kar, Aur kis liye hoon main? 😎
+                Idhar transfer kar diya kar, Aur kis liye hoon main? 💕😎
               </p>
               <p class="closing">
                 Stay this pure, this crazy & this special forever.  
-                I’m always here – a call, a text, ya ek “Heyy ree” door. 🤝💗
+                I’m always here – a call, a text, ya ek “Heyy ree” door.💝🫶
               </p>
               <p class="closing">
                 With lots of love,  
-                Abhishek 💌
+                Abhishek 😉
               </p>
             </div>
           </div>
@@ -661,20 +693,15 @@
 
       <div class="cards-row">
         <div class="mini-card">
-          <div class="mini-card-title">🤍 Wish #1</div>
+          <div class="mini-card-title">🌟 Wish #1</div>
           <p>
-            Tere life me hamesha peace rahe aur sirf good vibes, good news & good food.
+            Tere life me hamesha peace rahe aur sirf good vibes🤗, good news💖 & good food🫠.
           </p>
         </div>
         <div class="mini-card">
-          <div class="mini-card-title">💫 Wish #2</div>
+          <div class="mini-card-title">🧸 Wish #2</div>
           <p>
-          </p>
-        </div>
-        <div class="mini-card">
-          <div class="mini-card-title">🧸 Wish #3</div>
-          <p>
-            Jab kabhi tu low feel kare, tu bhale hi confuse ho jaye,parr meraa support fixed hai.
+            Tanna nin naaare naran na naaro naaare naaare roooo🤣🤣 🤣🤣 .
           </p>
         </div>
       </div>
@@ -693,12 +720,13 @@
     const typewriterEl = document.getElementById("typewriter");
     const musicBtn = document.getElementById("musicBtn");
     const music = document.getElementById("music");
+    const cards = document.querySelectorAll(".mini-card");
 
     let letterOpened = false;
 
     const twText =
-      "Sweetie, Is saal sirf ek hi target: more smiles, more memories,\n" +
-      "aur hum dono ki aur bhi zyada bakchodi together. 💖";
+      "Sweetie, is saal sirf ek hi target: more smiles, more memories,\n" +
+      "aur hum dono ki aur bhi zyada bakchodi together. ✨";
 
     function startTypewriter(text, element, speed = 45) {
       let i = 0;
@@ -710,6 +738,14 @@
           clearInterval(interval);
         }
       }, speed);
+    }
+
+    function revealCardsSequentially() {
+      cards.forEach((card, index) => {
+        setTimeout(() => {
+          card.classList.add("show");
+        }, 450 * index);
+      });
     }
 
     function launchConfetti() {
@@ -739,7 +775,8 @@
           afterLetter.classList.add("show");
           startTypewriter(twText, typewriterEl);
           launchConfetti();
-        }, 650);
+          revealCardsSequentially();
+        }, 700);
       }
     });
 
@@ -751,7 +788,7 @@
             musicBtn.textContent = "⏸ Pause Birthday Song";
           })
           .catch(() => {
-            alert("Browser ne auto-play block kar diya. Thoda wait karke dobara try kar 🙂");
+            alert("Browser ne auto-play block kar diya🤣🤣. Thoda wait karke dobara try kar 🙂");
           });
       } else {
         music.pause();
@@ -761,4 +798,3 @@
   </script>
 </body>
 </html>
-                                                                                        
