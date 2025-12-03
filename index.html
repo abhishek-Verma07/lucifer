@@ -46,20 +46,9 @@
       pointer-events: none;
     }
 
-    .bubble.small {
-      width: 30px;
-      height: 30px;
-    }
-
-    .bubble.medium {
-      width: 50px;
-      height: 50px;
-    }
-
-    .bubble.large {
-      width: 80px;
-      height: 80px;
-    }
+    .bubble.small { width: 30px; height: 30px; }
+    .bubble.medium { width: 50px; height: 50px; }
+    .bubble.large { width: 80px; height: 80px; }
 
     .bubble:nth-child(1) {
       top: 80%;
@@ -67,14 +56,12 @@
       background: #ffeaa7;
       animation-delay: 0s;
     }
-
     .bubble:nth-child(2) {
       top: 90%;
       left: 80%;
       background: #fd79a8;
       animation-delay: 3s;
     }
-
     .bubble:nth-child(3) {
       top: 75%;
       left: 50%;
@@ -83,15 +70,9 @@
     }
 
     @keyframes float {
-      0% {
-        transform: translateY(0) translateX(0);
-      }
-      50% {
-        transform: translateY(-40px) translateX(15px);
-      }
-      100% {
-        transform: translateY(0) translateX(0);
-      }
+      0% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-40px) translateX(15px); }
+      100% { transform: translateY(0) translateX(0); }
     }
 
     h1 {
@@ -211,17 +192,9 @@
       top: 6px;
     }
 
-    .drip:nth-child(1) {
-      left: 12px;
-    }
-
-    .drip:nth-child(2) {
-      left: 60px;
-    }
-
-    .drip:nth-child(3) {
-      left: 108px;
-    }
+    .drip:nth-child(1) { left: 12px; }
+    .drip:nth-child(2) { left: 60px; }
+    .drip:nth-child(3) { left: 108px; }
 
     /* Candles */
 
@@ -262,14 +235,8 @@
     }
 
     @keyframes flicker {
-      0% {
-        transform: translateX(-50%) scale(1);
-        opacity: 0.9;
-      }
-      100% {
-        transform: translateX(-50%) scale(1.1);
-        opacity: 1;
-      }
+      0% { transform: translateX(-50%) scale(1); opacity: 0.9; }
+      100% { transform: translateX(-50%) scale(1.1); opacity: 1; }
     }
 
     /* Teddy */
@@ -290,13 +257,8 @@
     }
 
     @keyframes bob {
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
 
     /* Sticker image (chwenchy.png) */
@@ -328,6 +290,12 @@
       margin-bottom: 10px;
     }
 
+    .tap-text {
+      font-size: 0.85rem;
+      opacity: 0.86;
+      margin-bottom: 6px;
+    }
+
     .envelope-wrapper {
       display: flex;
       justify-content: center;
@@ -337,27 +305,27 @@
     .envelope {
       width: 92%;
       max-width: 430px;
-      height: 250px;
       position: relative;
       cursor: pointer;
-      transform-style: preserve-3d;
-      transition: transform 0.6s ease;
+      margin: 0 auto;
     }
 
     .envelope-body {
-      position: absolute;
-      inset: 0;
+      position: relative;
+      width: 100%;
+      padding-top: 130px; /* flap ke niche space */
       background: #ffeaa7;
       border-radius: 18px;
       box-shadow: 0 16px 30px rgba(0, 0, 0, 0.4);
-      overflow: hidden;
+      overflow: visible;  /* ab text cut nahi hoga */
     }
 
     .envelope-front {
       position: absolute;
       inset: 0;
       background: linear-gradient(135deg, #ffeaa7, #fab1a0);
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      border-radius: 18px;
+      z-index: 1;
     }
 
     .envelope-flap {
@@ -390,23 +358,20 @@
     }
 
     .letter {
-      position: absolute;
-      left: 50%;
-      bottom: 12px;
-      transform: translateX(-50%);
-      width: 88%;
-      height: 80%;
+      position: relative;
+      width: 92%;
+      margin: 140px auto 18px;
       background: #fff;
       border-radius: 18px;
       padding: 18px 18px 22px;
       text-align: left;
       color: #2d3436;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
-      transform-origin: bottom;
-      transform: translateY(130px);
       opacity: 0;
-      transition: transform 0.7s ease, opacity 0.7s ease;
-      overflow-y: auto;
+      max-height: 0;
+      overflow: hidden;
+      z-index: 2;
+      transition: opacity 0.5s ease, max-height 0.5s ease;
     }
 
     .letter h2 {
@@ -432,14 +397,8 @@
     }
 
     .envelope.open .letter {
-      transform: translateY(0);
       opacity: 1;
-    }
-
-    .tap-text {
-      font-size: 0.85rem;
-      opacity: 0.86;
-      margin-bottom: 6px;
+      max-height: 500px; /* full text visible, koi cut nahi */
     }
 
     /* After letter section */
@@ -553,45 +512,16 @@
     }
 
     @keyframes confetti-fall {
-      0% {
-        transform: translateY(0) rotate(0deg);
-      }
-      100% {
-        transform: translateY(110vh) rotate(360deg);
-      }
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(110vh) rotate(360deg); }
     }
 
     @media (max-width: 620px) {
-      h1 {
-        font-size: 1.9rem;
-      }
-
-      h1 span {
-        font-size: 2.1rem;
-      }
-
-      .container {
-        padding: 18px 14px 25px;
-      }
-
-      .hero-row {
-        gap: 8px;
-      }
-
-      .cake-wrap,
-      .teddy-wrap {
-        width: 180px;
-        height: 180px;
-      }
-
-      .envelope {
-        width: 100%;
-        height: 260px;
-      }
-
-      .letter {
-        font-size: 0.95rem;
-      }
+      h1 { font-size: 1.9rem; }
+      h1 span { font-size: 2.1rem; }
+      .container { padding: 18px 14px 25px; }
+      .hero-row { gap: 8px; }
+      .cake-wrap, .teddy-wrap { width: 180px; height: 180px; }
     }
   </style>
 </head>
@@ -614,15 +544,9 @@
         <div class="cake-plate"></div>
         <div class="cake">
           <div class="candles">
-            <div class="candle">
-              <div class="flame"></div>
-            </div>
-            <div class="candle">
-              <div class="flame"></div>
-            </div>
-            <div class="candle">
-              <div class="flame"></div>
-            </div>
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
           </div>
           <div class="cake-top">
             <div class="drip"></div>
@@ -641,7 +565,7 @@
     <!-- Sticker image (uski photo) -->
     <div class="sticker-wrap">
       <!-- yaha file ka naam change kar sakta hai -->
-      <img src="chwenchy.jpg" alt="Chwenchy" class="sticker-img" />
+      <img src="chwenchy.png" alt="Chwenchy" class="sticker-img" />
     </div>
 
     <!-- Envelope -->
@@ -798,4 +722,3 @@
   </script>
 </body>
 </html>
-
