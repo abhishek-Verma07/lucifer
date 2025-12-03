@@ -96,11 +96,11 @@
 
     .cake-wrap {
       width: 220px;
-      height: 220px;
+      height: 260px;
       position: relative;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       flex-direction: column;
     }
 
@@ -123,6 +123,7 @@
         inset 0 0 0 1px rgba(255, 255, 255, 0.6);
       position: relative;
       overflow: hidden;
+      margin-top: 20px;
     }
 
     .cake::before {
@@ -197,7 +198,7 @@
     }
 
     .blow-hint {
-      margin-top: 10px;
+      margin-top: 8px;
       font-size: 0.85rem;
       opacity: 0.9;
       display: none;
@@ -462,12 +463,12 @@
     /* Music button */
 
     .music-btn {
-      margin-top: 18px;
-      padding: 9px 20px;
+      margin-top: 10px;
+      padding: 7px 18px;
       border-radius: 999px;
       border: none;
       outline: none;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 500;
       cursor: pointer;
       background: #ffeaa7;
@@ -514,7 +515,7 @@
       h1 span { font-size: 2.1rem; }
       .container { padding: 18px 14px 25px; }
       .hero-row { gap: 8px; }
-      .cake-wrap, .teddy-wrap { width: 180px; height: 180px; }
+      .cake-wrap, .teddy-wrap { width: 180px; height: 220px; }
     }
   </style>
 </head>
@@ -542,8 +543,14 @@
           </div>
         </div>
         <div class="cake-plate"></div>
+
+        <!-- SONG BUTTON yahi hai: pehle ye dabayegi, phir blow karegi -->
+        <button class="music-btn" id="musicBtn">
+          🎵 Play Birthday Song
+        </button>
+
         <p class="blow-hint" id="blowHint">
-          Letter padhne ke baad, mic me halki si phoonk maar ke candles off kar de 🎤
+          Song play kar, phir mic me halki si phoonk maar ke candles off kar de 🎤
         </p>
       </div>
 
@@ -621,16 +628,13 @@
       </div>
     </div>
 
-    <!-- Enjoy message after cake cut -->
+    <!-- Enjoy message after cake cut (scroll karne pe) -->
     <div class="enjoy-message" id="enjoyMessage">
       Enjoy your day to the fullest, Chwenchy! 💖<br />
       Tu deserve karti hai saare smiles, saari good vibes aur bohot saari happiness aaj ke din. ✨
     </div>
 
-    <!-- Music -->
-    <button class="music-btn" id="musicBtn">
-      🎵 Play Birthday Song
-    </button>
+    <!-- Audio -->
     <audio id="music" src="birthday.mp3"></audio>
     <audio id="clapAudio" src="clap.mp3"></audio>
   </div>
@@ -654,6 +658,8 @@
     let promisesShown = false;
     let candlesBlown = false;
     let cakeCut = false;
+    let enjoyReady = false;
+    let enjoyShown = false;
 
     const twText =
       "Sweetie, is saal sirf ek hi target: more smiles, more memories,\n" +
@@ -697,7 +703,7 @@
       }
     }
 
-    // Promise list tabhi dikhe jab user thoda scroll kare
+    // Promise list only after scroll/swipe
     function checkScrollForPromises() {
       if (!letterOpened || promisesShown) return;
       const rect = letter.getBoundingClientRect();
@@ -710,7 +716,20 @@
       }
     }
 
-    window.addEventListener("scroll", checkScrollForPromises);
+    // Enjoy message only after cake cut + scroll
+    function checkScrollForEnjoy() {
+      if (!enjoyReady || enjoyShown) return;
+      const rect = enjoyMessage.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 60) {
+        enjoyShown = true;
+        enjoyMessage.classList.add("show");
+      }
+    }
+
+    window.addEventListener("scroll", () => {
+      checkScrollForPromises();
+      checkScrollForEnjoy();
+    });
 
     // Envelope click
     envelope.addEventListener("click", () => {
@@ -771,7 +790,7 @@
       if (candlesBlown) return;
       candlesBlown = true;
       candles.classList.add("blown");
-      blowHint.textContent = "Nice! Ab finger se right swipe karke cake cut kar de 👉🍰";
+      blowHint.textContent = "Nice! Now swipe to cut the cake 👉🍰";
     }
 
     // Swipe to cut cake
@@ -803,7 +822,6 @@
       cake.style.position = "relative";
       cake.style.overflow = "visible";
 
-      // simple cut line
       const cutLine = document.createElement("div");
       cutLine.style.position = "absolute";
       cutLine.style.top = "0";
@@ -814,16 +832,15 @@
       cutLine.style.boxShadow = "0 0 6px rgba(0,0,0,0.2)";
       cake.appendChild(cutLine);
 
-      // clap sound
       if (clapAudio) {
         clapAudio.currentTime = 0;
         clapAudio.play().catch(() => {});
       }
 
-      enjoyMessage.classList.add("show");
+      enjoyReady = true; // ab thoda niche scroll karegi to final message dikhega
     }
 
-    // Music
+    // Music (button: candle blow se just pehle play karne ke liye)
     musicBtn.addEventListener("click", () => {
       if (music.paused) {
         music
